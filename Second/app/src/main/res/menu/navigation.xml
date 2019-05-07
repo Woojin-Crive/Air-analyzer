@@ -13,12 +13,12 @@
 
     <item
         android:id="@+id/navigation_three"
-        android:icon="@drawable/ic_notifications_black_24dp"
+        android:icon="@drawable/ic_settings_black_24dp"
         android:title="@string/title_three" />
 
     <item
         android:id="@+id/navigation_four"
-        android:icon="@drawable/ic_notifications_black_24dp"
+        android:icon="@drawable/ic_cloud_black_24dp"
         android:title="@string/title_four" />
 
 </menu>
