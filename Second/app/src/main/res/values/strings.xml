@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Air analyzer</string>
+    <string name="title_one">One</string>
+    <string name="title_two">Two</string>
+    <string name="title_three">Three</string>
+    <string name="title_four">Four</string>
+    <string name="location">내 위치</string>
+    <string name="time">현재 시간</string>
+    <string name="weather_potal">기상청</string>
+    <string name="misae">미세먼지</string>
+    <string name="chomisae">초미세먼지</string>
+    <string name="total_air">공기질 점수</string>
+    <string name="bluetooth">블루투스 연결여부</string>
+    <string name="air_name">공기점수:</string>
+    <string name="temperature">온도</string>
+    <string name="dust">미세먼지</string>
+    <string name="gas">gas</string>
+</resources>
