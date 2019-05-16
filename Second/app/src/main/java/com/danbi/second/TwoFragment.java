@@ -5,11 +5,9 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.BarChart;
@@ -21,20 +19,10 @@ import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-
-import org.json.JSONArray;
-import org.json.JSONException;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class TwoFragment extends Fragment {
     @Nullable
@@ -94,7 +82,7 @@ public class TwoFragment extends Fragment {
             lentries.add(entry);
         }
 
-        l.setXEntrySpace(60f); // set the space between the legend entries on the x-axis
+        l.setXEntrySpace(10f); // set the space between the legend entries on the x-axis
         l.setYEntrySpace(10f);
         l.setCustom(lentries);
 

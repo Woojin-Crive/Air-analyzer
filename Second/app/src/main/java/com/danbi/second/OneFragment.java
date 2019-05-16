@@ -26,7 +26,7 @@ public class OneFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_one, container, false);
         ListMap = ((MainActivity) getActivity()).ListMap;
-        Log.d("data received", ListMap.toString());
+        //Log.d("data received", ListMap.toString());
         ImageView imageView1 = view.findViewById(R.id.imageViewGood);
         ImageView imageView2 = view.findViewById(R.id.imageViewBotong);
         ImageView imageView3 = view.findViewById(R.id.imageViewBad);
