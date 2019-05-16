@@ -12,7 +12,7 @@ public class ThreeFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        ViewGroup rootview = (ViewGroup) inflater.inflate(R.layout.fragment_three, container, false);
-        return rootview;
+        View view = inflater.inflate(R.layout.fragment_three, container, false);
+        return view;
     }
 }
