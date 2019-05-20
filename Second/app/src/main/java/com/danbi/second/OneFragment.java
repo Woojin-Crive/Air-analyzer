@@ -35,6 +35,9 @@ public class OneFragment extends Fragment {
         ImageView imageView6 = view.findViewById(R.id.imageViewBotong1);
         ImageView imageView7 = view.findViewById(R.id.imageViewBad1);
         ImageView imageView8 = view.findViewById(R.id.imageViewVeryBad1);
+        TextView misaValue = view.findViewById(R.id.misaValue);
+        TextView chomisaValue = view.findViewById(R.id.chomisaValue);
+        TextView airValue = view.findViewById(R.id.airValue);
         imageView1.setVisibility(View.INVISIBLE);
         imageView2.setVisibility(View.INVISIBLE);
         imageView3.setVisibility(View.INVISIBLE);
@@ -43,6 +46,16 @@ public class OneFragment extends Fragment {
         imageView6.setVisibility(View.INVISIBLE);
         imageView7.setVisibility(View.INVISIBLE);
         imageView8.setVisibility(View.INVISIBLE);
+        misaValue.setText(ListMap.get(0).get("pm10").toString() + "u/gm3");
+        chomisaValue.setText(ListMap.get(0).get("pm1_0").toString() + "u/gm3");
+        int pm10 = (int) Float.parseFloat(ListMap.get(0).get("pm10").toString());//misa
+        int pm1_0 = (int) Float.parseFloat(ListMap.get(0).get("pm1_0").toString());//chomisa
+        int menthanen = (int) Float.parseFloat(ListMap.get(0).get("methanen").toString());
+        int Co = (int) Float.parseFloat(ListMap.get(0).get("Co").toString());
+        int gas = (int) Float.parseFloat(ListMap.get(0).get("gas").toString());
+        int airvalue = 0;
+        airvalue = (scoreEval("misa", pm10) + scoreEval("chomisa", pm1_0) + scoreEval("menthanen", menthanen) + scoreEval("Co", Co) + scoreEval("gas", gas)) / 5;
+        airValue.setText(Integer.toString(airvalue));
         int pm10Case = 0;
         int pm1_0Case = 0;
         float pm10Data = Float.parseFloat(ListMap.get(0).get("pm10").toString());
@@ -102,5 +115,66 @@ public class OneFragment extends Fragment {
         TextView textView2 = view.findViewById(R.id.textView2);
         textView2.setText(DateFormat.format("HH:mm", System.currentTimeMillis()));
         return view;
+    }
+
+    public int scoreEval(String type, int data) {
+
+        if (type.equals("chomisa")) {
+            if (0 <= data && data <= 15) {
+                return 100;
+            } else if (16 <= data && data <= 35) {
+                return 75;
+            } else if (36 <= data && data <= 75) {
+                return 50;
+            } else {
+                return 25;
+            }
+
+        } else if (type.equals("misa")) {
+            if (0 <= data && data <= 30) {
+                return 100;
+            } else if (31 <= data && data <= 80) {
+                return 75;
+            } else if (81 <= data && data <= 150) {
+                return 50;
+            } else {
+                return 25;
+            }
+
+        } else if (type.equals("methanen")) {
+            if (100 <= data && data <= 200) {
+                return 100;
+            } else if (201 <= data && data <= 300) {
+                return 75;
+            } else if (301 <= data && data <= 400) {
+                return 50;
+            } else {
+                return 25;
+            }
+
+        } else if (type.equals("Co")) {
+            if (0 <= data && data <= 2) {
+                return 100;
+            } else if (3 <= data && data <= 9) {
+                return 75;
+            } else if (10 <= data && data <= 15) {
+                return 50;
+            } else {
+                return 25;
+            }
+
+        } else if (type.equals("gas")) {
+            if (100 <= data && data <= 200) {
+                return 100;
+            } else if (201 <= data && data <= 300) {
+                return 75;
+            } else if (301 <= data && data <= 400) {
+                return 50;
+            } else {
+                return 25;
+            }
+
+        }
+        return 0;
     }
 }

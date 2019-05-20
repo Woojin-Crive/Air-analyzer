@@ -15,13 +15,16 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <LinearLayout
+        android:id="@+id/topLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/white"
         android:gravity="center"
+        android:paddingTop="@dimen/contentPadding"
+        android:paddingBottom="@dimen/contentPadding"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -30,14 +33,12 @@
             android:id="@+id/textView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginVertical="0dp"
+            android:layout_marginHorizontal="@dimen/contentPadding"
             android:layout_weight="1"
-            android:gravity="left"
             android:text="@string/location"
-            android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/textView2"
@@ -46,17 +47,14 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="@string/time"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="20sp" />
 
         <ImageButton
             android:id="@+id/imageButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginVertical="0dp"
+            android:layout_marginHorizontal="@dimen/contentPadding"
             android:layout_weight="1"
             android:adjustViewBounds="true"
             android:background="@color/colorPrimary"
@@ -64,127 +62,197 @@
             android:maxWidth="130dp"
             android:onClick="GoToGisang"
             android:scaleType="fitCenter"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/gisang" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/scoreLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="@string/misae"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="16dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/contentPadding"
+        android:paddingBottom="@dimen/contentPadding"
+        app:layout_constraintTop_toBottomOf="@id/topLayout">
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:text="@string/chomisae"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/contentPadding"
+            android:background="@color/white"
+            android:gravity="center"
+            android:text="@string/total_air"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topLayout" />
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="@string/total_air"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.469"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/airValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/airScore"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="60sp" />
 
-    <ImageView
-        android:id="@+id/imageViewGood"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="80dp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/good" />
+    </LinearLayout>
 
-    <ImageView
-        android:id="@+id/imageViewBotong"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="80dp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/botong" />
+        android:layout_marginTop="16dp"
+        android:background="@color/white"
+        android:baselineAligned="false"
+        android:gravity="center"
+        android:paddingTop="@dimen/contentPadding"
+        android:paddingBottom="@dimen/contentPadding"
+        app:layout_constraintTop_toBottomOf="@+id/scoreLayout">
 
-    <ImageView
-        android:id="@+id/imageViewBad"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="80dp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/bad" />
+        <LinearLayout
+            android:id="@+id/misaLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/imageViewVeryBad"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="80dp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/verybad" />
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/contentPadding"
+                android:gravity="center"
+                android:text="@string/misae"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageViewGood1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="80dp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/good" />
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
 
-    <ImageView
-        android:id="@+id/imageViewBotong1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="80dp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/botong" />
+                <ImageView
+                    android:id="@+id/imageViewVeryBad"
+                    android:layout_width="@dimen/misaImageWidth"
+                    android:layout_height="@dimen/misaImageHeight"
+                    android:layout_gravity="center"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/verybad" />
 
-    <ImageView
-        android:id="@+id/imageViewBad1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="80dp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/bad" />
+                <ImageView
+                    android:id="@+id/imageViewBad"
+                    android:layout_width="@dimen/misaImageWidth"
+                    android:layout_height="@dimen/misaImageHeight"
+                    android:layout_gravity="center"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/bad" />
 
-    <ImageView
-        android:id="@+id/imageViewVeryBad1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="80dp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/verybad" />
+                <ImageView
+                    android:id="@+id/imageViewBotong"
+                    android:layout_width="@dimen/misaImageWidth"
+                    android:layout_height="@dimen/misaImageHeight"
+                    android:layout_gravity="center"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/botong" />
+
+                <ImageView
+                    android:id="@+id/imageViewGood"
+                    android:layout_width="@dimen/misaImageWidth"
+                    android:layout_height="@dimen/misaImageHeight"
+                    android:layout_gravity="center"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/good" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/misaValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/contentPadding"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/chomisaLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/contentPadding"
+                android:gravity="center"
+                android:text="@string/chomisae"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:id="@+id/imageViewGood1"
+                    android:layout_width="@dimen/misaImageWidth"
+                    android:layout_height="@dimen/misaImageHeight"
+                    android:layout_gravity="center"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/good" />
+
+                <ImageView
+                    android:id="@+id/imageViewBotong1"
+                    android:layout_width="@dimen/misaImageWidth"
+                    android:layout_height="@dimen/misaImageHeight"
+                    android:layout_gravity="center"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/botong" />
+
+                <ImageView
+                    android:id="@+id/imageViewVeryBad1"
+                    android:layout_width="@dimen/misaImageWidth"
+                    android:layout_height="@dimen/misaImageHeight"
+                    android:layout_gravity="center"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/verybad" />
+
+                <ImageView
+                    android:id="@+id/imageViewBad1"
+                    android:layout_width="@dimen/misaImageWidth"
+                    android:layout_height="@dimen/misaImageHeight"
+                    android:layout_gravity="center"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/bad" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/chomisaValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/contentPadding"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

@@ -15,8 +15,8 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.splash_screen);
         final Intent intent = new Intent(this, MainActivity.class);
-
         Call<String> res = NetRetrofit.getInstance().getService().getJson();
         res.enqueue(new Callback<String>() {
             @Override

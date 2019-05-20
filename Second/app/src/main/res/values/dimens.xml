@@ -3,4 +3,7 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="nav_size">50dp</dimen>
+    <dimen name="contentPadding">12dp</dimen>
+    <dimen name="misaImageWidth">180dp</dimen>
+    <dimen name="misaImageHeight">200dp</dimen>
 </resources>

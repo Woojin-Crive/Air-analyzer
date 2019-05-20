@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             }
         }
         loadFragment(new OneFragment());
-        fadeOutAndHideImage(loadingImage);
+        //fadeOutAndHideImage(loadingImage);
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(this);
     }
