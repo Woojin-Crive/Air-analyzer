@@ -53,7 +53,7 @@
         <ImageButton
             android:id="@+id/imageButton"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/nav_size"
             android:layout_marginHorizontal="@dimen/contentPadding"
             android:layout_weight="1"
             android:adjustViewBounds="true"

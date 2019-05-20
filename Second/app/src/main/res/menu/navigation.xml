@@ -11,10 +11,10 @@
         android:icon="@drawable/ic_round_show_chart_24px"
         android:title="@string/title_two" />
 
-    <!--<item-->
-        <!--android:id="@+id/navigation_three"-->
-        <!--android:icon="@drawable/ic_settings_black_24dp"-->
-        <!--android:title="@string/title_three" />-->
+    <item
+        android:id="@+id/navigation_three"
+        android:icon="@drawable/ic_settings_black_24dp"
+        android:title="@string/title_three" />
 
     <!--<item-->
         <!--android:id="@+id/navigation_four"-->
