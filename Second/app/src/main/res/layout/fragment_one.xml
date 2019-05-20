@@ -38,7 +38,7 @@
             android:text="@string/location"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/textView2"
@@ -48,7 +48,7 @@
             android:gravity="center"
             android:text="@string/time"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
         <ImageButton
             android:id="@+id/imageButton"
@@ -81,12 +81,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginBottom="@dimen/contentPadding"
             android:background="@color/white"
             android:gravity="center"
             android:text="@string/total_air"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textSize="20sp"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/topLayout" />
@@ -130,7 +129,7 @@
                 android:gravity="center"
                 android:text="@string/misae"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -179,7 +178,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/contentPadding"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="16sp" />
 
         </LinearLayout>
 
@@ -200,7 +200,7 @@
                 android:gravity="center"
                 android:text="@string/chomisae"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -249,7 +249,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/contentPadding"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="16sp" />
 
         </LinearLayout>
 

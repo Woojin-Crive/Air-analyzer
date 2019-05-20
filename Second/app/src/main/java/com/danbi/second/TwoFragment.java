@@ -1,5 +1,6 @@
 package com.danbi.second;
 
+import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -10,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.components.Legend;
@@ -40,9 +42,11 @@ public class TwoFragment extends Fragment {
         TabLayout tabLayout = view.findViewById(R.id.tabLayout);
         textView = view.findViewById(R.id.textView);
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @SuppressLint("DefaultLocale")
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
 
+                Toast.makeText(getActivity(), String.format("tab %d selected", tab.getPosition()), Toast.LENGTH_LONG).show();
             }
 
             @Override

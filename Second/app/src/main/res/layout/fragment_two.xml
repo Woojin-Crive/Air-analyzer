@@ -9,10 +9,13 @@
         android:id="@+id/bar"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+    </com.github.mikephil.charting.charts.BarChart>
 
     <android.support.design.widget.TabLayout
         android:id="@+id/tabLayout"
@@ -20,6 +23,7 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
         app:layout_constraintTop_toTopOf="parent"
+        app:tabIndicatorColor="@android:color/black"
         app:tabMode="scrollable">
 
         <android.support.design.widget.TabItem
@@ -52,5 +56,35 @@
             android:layout_height="wrap_content"
             android:text="@string/feelScore" />
     </android.support.design.widget.TabLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_above="@id/tabLayout"
+        android:background="@drawable/shadow"
+        android:rotation="180"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout"
+        tools:layout_editor_absoluteX="312dp" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout">
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/line_chart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" />
+
+    </FrameLayout>
 
 </android.support.constraint.ConstraintLayout>

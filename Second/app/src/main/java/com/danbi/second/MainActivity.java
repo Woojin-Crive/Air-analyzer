@@ -96,13 +96,13 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 fragment = new TwoFragment();
                 break;
 
-            case R.id.navigation_three:
-                fragment = new ThreeFragment();
-                break;
-
-            case R.id.navigation_four:
-                fragment = new FourFragment();
-                break;
+//            case R.id.navigation_three:
+//                fragment = new ThreeFragment();
+//                break;
+//
+//            case R.id.navigation_four:
+//                fragment = new FourFragment();
+//                break;
         }
 
         return loadFragment(fragment);
