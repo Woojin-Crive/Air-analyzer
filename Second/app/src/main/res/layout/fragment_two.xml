@@ -5,18 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.github.mikephil.charting.charts.BarChart
-        android:id="@+id/bar"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </com.github.mikephil.charting.charts.BarChart>
-
     <android.support.design.widget.TabLayout
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
@@ -55,37 +43,153 @@
         <android.support.design.widget.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@string/humid" />
+
+        <android.support.design.widget.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="@string/feelScore" />
     </android.support.design.widget.TabLayout>
 
-    <View
-        android:id="@+id/view"
+    <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
-        android:layout_height="4dp"
-        android:layout_above="@id/tabLayout"
-        android:background="@drawable/shadow"
-        android:rotation="180"
-        android:visibility="invisible"
-        app:layout_constraintTop_toBottomOf="@+id/tabLayout"
-        tools:layout_editor_absoluteX="312dp" />
-
-    <FrameLayout
-        android:id="@+id/frameLayout"
-        android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tabLayout">
 
-        <com.github.mikephil.charting.charts.LineChart
-            android:id="@+id/line_chart"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="16dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    </FrameLayout>
+            <LinearLayout
+                android:id="@+id/chartFrame1"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/oneMonth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/contentPadding"
+                    android:text="1주 전"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="@dimen/bodyTextSize" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/chart1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/contentPadding"
+                    android:layout_marginEnd="@dimen/contentPadding"
+                    android:layout_marginBottom="@dimen/contentPadding"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                </com.github.mikephil.charting.charts.LineChart>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/chartFrame2"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginTop="@dimen/contentPadding"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/twoWeeks"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/contentPadding"
+                    android:text="2주 전"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="@dimen/bodyTextSize" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/chart2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/contentPadding"
+                    android:layout_marginEnd="@dimen/contentPadding"
+                    android:layout_marginBottom="@dimen/contentPadding"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/chartFrame3"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginTop="@dimen/contentPadding"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/oneWeek"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/contentPadding"
+                    android:text="1주 전"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="@dimen/bodyTextSize" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/chart3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/contentPadding"
+                    android:layout_marginEnd="@dimen/contentPadding"
+                    android:layout_marginBottom="@dimen/contentPadding"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/chartFrame4"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginTop="@dimen/contentPadding"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/today"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/contentPadding"
+                    android:text="오늘"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="@dimen/bodyTextSize" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/chart4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/contentPadding"
+                    android:layout_marginEnd="@dimen/contentPadding"
+                    android:layout_marginBottom="@dimen/contentPadding"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:background="@color/darkGray"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="@+id/tabLayout"
+        app:layout_constraintStart_toStartOf="@+id/tabLayout" />
 
 </android.support.constraint.ConstraintLayout>

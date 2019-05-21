@@ -6,4 +6,5 @@
     <dimen name="contentPadding">12dp</dimen>
     <dimen name="misaImageWidth">180dp</dimen>
     <dimen name="misaImageHeight">200dp</dimen>
+    <dimen name="bodyTextSize">16sp</dimen>
 </resources>

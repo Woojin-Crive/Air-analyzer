@@ -56,7 +56,12 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             } catch (JSONException e) {
                 e.printStackTrace();
             }
+            Map<String, Float> discomfort = new HashMap<>();
+            float discomfortData = (9.0f / 5 * Float.parseFloat(ListMap.get(i).get("Temp").toString())) - 0.55f * (1f - Float.parseFloat(ListMap.get(i).get("Humid").toString()) / 100f) * (9.0f / 5.0f * Float.parseFloat(ListMap.get(i).get("Temp").toString()) - 26.0f) + 32.0f;
+            discomfort.put("Discomfort", discomfortData);
+            ListMap.get(i).putAll(discomfort);
         }
+        Log.d("disconfort data", ListMap.toString());
         loadFragment(new OneFragment());
         //fadeOutAndHideImage(loadingImage);
         BottomNavigationView navigation = findViewById(R.id.navigation);
