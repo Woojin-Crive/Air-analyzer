@@ -189,7 +189,7 @@ public class TwoFragment extends Fragment {
             int cnt = 0;
             if (maxIndex >= 7)
                 cnt = 7; //how many weeks?
-            else if (maxIndex >= 1) {
+            else if (maxIndex > 1) {
                 cnt = maxIndex;
                 oneMonth.setText(maxIndex + "일 전");
             } else {
