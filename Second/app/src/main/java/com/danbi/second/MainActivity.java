@@ -43,50 +43,54 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         data = intent.getStringExtra("RawData");
         Log.d("data", "not null");
         Log.e("received from splash", data);
-        try {
-            jsonArray = new JSONArray(data);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        for (int i = 0; i < jsonArray.length(); i++) {
-            Map<String, String> map = new HashMap<>();
-            Gson gson = new Gson();
+        if (!data.equals("")) {
             try {
-                ListMap.add(gson.fromJson(jsonArray.getString(i), map.getClass()));
+                jsonArray = new JSONArray(data);
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            Map<String, Float> discomfort = new HashMap<>();
-            float discomfortData = (9.0f / 5 * Float.parseFloat(ListMap.get(i).get("Temp").toString())) - 0.55f * (1f - Float.parseFloat(ListMap.get(i).get("Humid").toString()) / 100f) * (9.0f / 5.0f * Float.parseFloat(ListMap.get(i).get("Temp").toString()) - 26.0f) + 32.0f;
-            discomfort.put("Discomfort", discomfortData);
-            ListMap.get(i).putAll(discomfort);
+            for (int i = 0; i < jsonArray.length(); i++) {
+                Map<String, String> map = new HashMap<>();
+                Gson gson = new Gson();
+                try {
+                    ListMap.add(gson.fromJson(jsonArray.getString(i), map.getClass()));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                Map<String, Float> discomfort = new HashMap<>();
+                float discomfortData = (9.0f / 5 * Float.parseFloat(ListMap.get(i).get("Temp").toString())) - 0.55f * (1f - Float.parseFloat(ListMap.get(i).get("Humid").toString()) / 100f) * (9.0f / 5.0f * Float.parseFloat(ListMap.get(i).get("Temp").toString()) - 26.0f) + 32.0f;
+                discomfort.put("Discomfort", discomfortData);
+                ListMap.get(i).putAll(discomfort);
+            }
+            Log.d("discomfort data", ListMap.toString());
+        } else {
+            Toast.makeText(getApplicationContext(), "데이터를 업데이트 해주세요.", Toast.LENGTH_LONG).show();
         }
-        Log.d("disconfort data", ListMap.toString());
         loadFragment(new OneFragment());
         //fadeOutAndHideImage(loadingImage);
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(this);
     }
 
-    private void fadeOutAndHideImage(final ImageView img) {
-        Animation fadeOut = new AlphaAnimation(1, 0);
-        fadeOut.setInterpolator(new AccelerateInterpolator());
-        fadeOut.setDuration(1000);
-
-        fadeOut.setAnimationListener(new Animation.AnimationListener() {
-            public void onAnimationEnd(Animation animation) {
-                img.setVisibility(View.GONE);
-            }
-
-            public void onAnimationRepeat(Animation animation) {
-            }
-
-            public void onAnimationStart(Animation animation) {
-            }
-        });
-
-        img.startAnimation(fadeOut);
-    }
+//    private void fadeOutAndHideImage(final ImageView img) {
+//        Animation fadeOut = new AlphaAnimation(1, 0);
+//        fadeOut.setInterpolator(new AccelerateInterpolator());
+//        fadeOut.setDuration(1000);
+//
+//        fadeOut.setAnimationListener(new Animation.AnimationListener() {
+//            public void onAnimationEnd(Animation animation) {
+//                img.setVisibility(View.GONE);
+//            }
+//
+//            public void onAnimationRepeat(Animation animation) {
+//            }
+//
+//            public void onAnimationStart(Animation animation) {
+//            }
+//        });
+//
+//        img.startAnimation(fadeOut);
+//    }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {

@@ -171,87 +171,89 @@ public class TwoFragment extends Fragment {
     }
 
     private void setData() {
-        ArrayList<Entry> values = new ArrayList<>();
-        int cnt = 7; //how many weeks?
-        for (int j = ListMap.size() - 1; cnt > 0; ) {
-            float sum = 0;
-            String data = ListMap.get(j).get("DataTime").toString().substring(0, 11);
-            Log.d("Date", ListMap.get(j).get("DataTime").toString().substring(0, 11));
-            int i;
-            for (i = 0; data.equals(ListMap.get(j).get("DataTime").toString().substring(0, 11)); i++) {
-                sum += Float.parseFloat(ListMap.get(j).get(dataSelector).toString());
-                j--;
+        if (ListMap.size() != 0) {
+            ArrayList<Entry> values = new ArrayList<>();
+            int cnt = 7; //how many weeks?
+            for (int j = ListMap.size() - 1; cnt > 0; ) {
+                float sum = 0;
+                String data = ListMap.get(j).get("DataTime").toString().substring(0, 11);
+                Log.d("Date", ListMap.get(j).get("DataTime").toString().substring(0, 11));
+                int i;
+                for (i = 0; data.equals(ListMap.get(j).get("DataTime").toString().substring(0, 11)); i++) {
+                    sum += Float.parseFloat(ListMap.get(j).get(dataSelector).toString());
+                    j--;
+                }
+                //Log.d("j", String.valueOf(j));
+                sum /= i * 1.0;
+                Log.d("Data amount", String.valueOf(i));
+                if (mini > sum / i * 1.0)
+                    mini = (float) (sum / i * 1.0);
+                if (maxi > sum / i * 1.0)
+                    maxi = (float) (sum / i * 1.0);
+
+                values.add(new Entry(cnt - 1, sum));
+                cnt--;
             }
-            //Log.d("j", String.valueOf(j));
-            sum /= i * 1.0;
-            Log.d("Data amount", String.valueOf(i));
-            if (mini > sum / i * 1.0)
-                mini = (float) (sum / i * 1.0);
-            if (maxi > sum / i * 1.0)
-                maxi = (float) (sum / i * 1.0);
+            Collections.reverse(values);
+            Log.d("done", values.toString());
 
-            values.add(new Entry(cnt-1, sum));
-            cnt--;
-        }
-        Collections.reverse(values);
-        Log.d("done", values.toString());
+            LineDataSet set1;
 
-        LineDataSet set1;
+            if (chart.getData() != null &&
+                    chart.getData().getDataSetCount() > 0) {
+                set1 = (LineDataSet) chart.getData().getDataSetByIndex(0);
+                set1.setValues(values);
+                set1.notifyDataSetChanged();
+                chart.getData().notifyDataChanged();
+                chart.notifyDataSetChanged();
+            } else {
+                // create a dataset and give it a type
+                set1 = new LineDataSet(values, "DataSet 1");
 
-        if (chart.getData() != null &&
-                chart.getData().getDataSetCount() > 0) {
-            set1 = (LineDataSet) chart.getData().getDataSetByIndex(0);
-            set1.setValues(values);
-            set1.notifyDataSetChanged();
-            chart.getData().notifyDataChanged();
-            chart.notifyDataSetChanged();
-        } else {
-            // create a dataset and give it a type
-            set1 = new LineDataSet(values, "DataSet 1");
+                set1.setDrawIcons(false);
 
-            set1.setDrawIcons(false);
+                // draw dashed line
+                set1.enableDashedLine(10f, 5f, 0f);
 
-            // draw dashed line
-            set1.enableDashedLine(10f, 5f, 0f);
+                // black lines and points
+                set1.setColor(Color.BLACK);
+                set1.setCircleColor(Color.BLACK);
 
-            // black lines and points
-            set1.setColor(Color.BLACK);
-            set1.setCircleColor(Color.BLACK);
+                // line thickness and point size
+                set1.setLineWidth(1f);
+                set1.setCircleRadius(3f);
 
-            // line thickness and point size
-            set1.setLineWidth(1f);
-            set1.setCircleRadius(3f);
+                // draw points as solid circles
+                set1.setDrawCircleHole(false);
 
-            // draw points as solid circles
-            set1.setDrawCircleHole(false);
-
-            //customize legend entry
+                //customize legend entry
 //            set1.setFormLineWidth(.0f);
 //            set1.setFormLineDashEffect(new DashPathEffect(new float[]{10f, 5f}, 0f));
 //            set1.setFormSize(.0f);
 
-            // text size of values
-            set1.setValueTextSize(9f);
-            // draw selection line as dashed
-            set1.enableDashedHighlightLine(10f, 5f, 0f);
+                // text size of values
+                set1.setValueTextSize(9f);
+                // draw selection line as dashed
+                set1.enableDashedHighlightLine(10f, 5f, 0f);
 
-            // set the filled area
-            set1.setDrawFilled(true);
-            set1.setFillFormatter(new IFillFormatter() {
-                @Override
-                public float getFillLinePosition(ILineDataSet dataSet, LineDataProvider dataProvider) {
-                    return chart.getAxisLeft().getAxisMinimum();
-                }
-            });
+                // set the filled area
+                set1.setDrawFilled(true);
+                set1.setFillFormatter(new IFillFormatter() {
+                    @Override
+                    public float getFillLinePosition(ILineDataSet dataSet, LineDataProvider dataProvider) {
+                        return chart.getAxisLeft().getAxisMinimum();
+                    }
+                });
 
-            ArrayList<ILineDataSet> dataSets = new ArrayList<>();
-            dataSets.add(set1); // add the data sets
+                ArrayList<ILineDataSet> dataSets = new ArrayList<>();
+                dataSets.add(set1); // add the data sets
 
-            // create a data object with the data sets
-            LineData data = new LineData(dataSets);
+                // create a data object with the data sets
+                LineData data = new LineData(dataSets);
 
-            // set data
-            chart.setData(data);
+                // set data
+                chart.setData(data);
+            }
         }
     }
 }
