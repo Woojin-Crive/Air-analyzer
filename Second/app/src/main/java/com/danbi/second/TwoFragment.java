@@ -195,7 +195,7 @@ public class TwoFragment extends Fragment {
             } else {
                 oneMonth.setText("오늘");//bluetooth
             }
-            if (maxIndex >= 1) {
+            if (maxIndex > 1) {
                 for (int j = ListMap.size() - 1; cnt > 0; ) {
                     float sum = 0;
                     String data = ListMap.get(j).get("DataTime").toString().substring(0, 11);
