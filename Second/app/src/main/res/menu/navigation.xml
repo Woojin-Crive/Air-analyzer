@@ -13,7 +13,7 @@
 
     <item
         android:id="@+id/navigation_three"
-        android:icon="@drawable/ic_outline_settings_24px"
+        android:icon="@drawable/ic_round_sync_24px"
         android:title="@string/title_three" />
 
     <!--<item-->
