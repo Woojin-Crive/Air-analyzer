@@ -81,4 +81,18 @@
             android:textSize="@dimen/bodyTextSize" />
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/dataInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center"
+        android:padding="@dimen/contentPadding"
+        android:text="TextView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="@dimen/bodyTextSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
 </android.support.constraint.ConstraintLayout>

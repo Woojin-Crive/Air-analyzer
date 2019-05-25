@@ -50,12 +50,24 @@ public class TwoFragment extends Fragment {
     private LineChart chart;
     String dataSelector = "pm10";
     float mini = 0f, maxi = 200f;
+    int maxIndex = 0;
+    public TextView oneMonth;
 
     @Override
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_two, container, false);
+        oneMonth = view.findViewById(R.id.oneMonth);
         ListMap = ((MainActivity) Objects.requireNonNull(getActivity())).ListMap;
+        int j;
+        for (int i = 0; i < ListMap.size() - 1; ) {
+            String data = ListMap.get(i).get("DataTime").toString().substring(0, 11);
+            for (j = i; j < ListMap.size() && data.equals(ListMap.get(j).get("DataTime").toString().substring(0, 11)); j++) {
+            }
+            maxIndex++;
+            Log.d("index", maxIndex + " : " + data);
+            i = j;
+        }
         TabLayout tabLayout = view.findViewById(R.id.tabLayout);
         textView = view.findViewById(R.id.textView);
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -170,33 +182,47 @@ public class TwoFragment extends Fragment {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private void setData() {
         if (ListMap.size() != 0) {
             ArrayList<Entry> values = new ArrayList<>();
-            int cnt = 7; //how many weeks?
-            for (int j = ListMap.size() - 1; cnt > 0; ) {
-                float sum = 0;
-                String data = ListMap.get(j).get("DataTime").toString().substring(0, 11);
-                Log.d("Date", ListMap.get(j).get("DataTime").toString().substring(0, 11));
-                int i;
-                for (i = 0; data.equals(ListMap.get(j).get("DataTime").toString().substring(0, 11)); i++) {
-                    sum += Float.parseFloat(ListMap.get(j).get(dataSelector).toString());
-                    j--;
-                }
-                //Log.d("j", String.valueOf(j));
-                sum /= i * 1.0;
-                Log.d("Data amount", String.valueOf(i));
-                if (mini > sum / i * 1.0)
-                    mini = (float) (sum / i * 1.0);
-                if (maxi > sum / i * 1.0)
-                    maxi = (float) (sum / i * 1.0);
-
-                values.add(new Entry(cnt - 1, sum));
-                cnt--;
+            int cnt = 0;
+            if (maxIndex >= 7)
+                cnt = 7; //how many weeks?
+            else if (maxIndex >= 1) {
+                cnt = maxIndex;
+                oneMonth.setText(maxIndex + "일 전");
+            } else {
+                oneMonth.setText("오늘");//bluetooth
             }
-            Collections.reverse(values);
-            Log.d("done", values.toString());
+            if (maxIndex >= 1) {
+                for (int j = ListMap.size() - 1; cnt > 0; ) {
+                    float sum = 0;
+                    String data = ListMap.get(j).get("DataTime").toString().substring(0, 11);
+                    Log.d("Date", ListMap.get(j).get("DataTime").toString().substring(0, 11));
+                    int i;
+                    for (i = 0; j > -1 && data.equals(ListMap.get(j).get("DataTime").toString().substring(0, 11)); i++) {
+                        sum += Float.parseFloat(ListMap.get(j).get(dataSelector).toString());
+                        j--;
+                    }
+                    //Log.d("j", String.valueOf(j));
+                    sum /= i * 1.0;
+                    Log.d("Data amount", String.valueOf(i));
+                    if (mini > sum / i * 1.0)
+                        mini = (float) (sum / i * 1.0);
+                    if (maxi > sum / i * 1.0)
+                        maxi = (float) (sum / i * 1.0);
 
+                    values.add(new Entry(cnt - 1, sum));
+                    cnt--;
+                }
+                Collections.reverse(values);
+                Log.d("done", values.toString());
+            } else {//bluetooth
+                for (int i = 0; i < ListMap.size() - 1; i++) {
+                    values.add(new Entry(i, Float.parseFloat(ListMap.get(i).get(dataSelector).toString())));
+                }
+            }
             LineDataSet set1;
 
             if (chart.getData() != null &&

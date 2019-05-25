@@ -1,5 +1,6 @@
 package com.danbi.second;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.bluetooth.BluetoothAdapter;
@@ -58,11 +59,27 @@ public class ThreeFragment extends Fragment {
     private EditText editTextSend; // 송신 할 데이터를 작성하기 위한 에딧 텍스트
     private Button buttonSend; // 송신하기 위한 버튼
     JSONArray jsonArray = new JSONArray();
-    List<Map> ListMapL = new ArrayList<>();
+    List<Map> ListMapF = new ArrayList<>();
     int pairedDeviceCount;
+    TextView dataInfo;
 
+    @SuppressLint("SetTextI18n")
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_three, container, false);
+        dataInfo = view.findViewById(R.id.dataInfo);
+        ListMapF = ((MainActivity) Objects.requireNonNull(getActivity())).ListMap;
+        if (ListMapF.size() != 0) {
+            int j, maxIndex = 0;
+            for (int i = 0; i < ListMapF.size() - 1; ) {
+                String data = ListMapF.get(i).get("DataTime").toString().substring(0, 11);
+                for (j = i; j < ListMapF.size() && data.equals(ListMapF.get(j).get("DataTime").toString().substring(0, 11)); j++) {
+                }
+                maxIndex++;
+                Log.d("index", maxIndex + " : " + data);
+                i = j;
+            }
+            dataInfo.setText("서버로부터 " + maxIndex + "일 간의 총 " + ListMapF.size() + "개의 데이터를 불러왔습니다.");
+        }
         Button serverButton = view.findViewById(R.id.serverButton);
         final MainActivity activity = (MainActivity) getActivity();
         serverButton.setOnClickListener(new View.OnClickListener() {
@@ -70,6 +87,7 @@ public class ThreeFragment extends Fragment {
             public void onClick(View v) {
                 Call<String> res = NetRetrofit.getInstance().getService().getJson();
                 res.enqueue(new Callback<String>() {
+                    @SuppressLint("SetTextI18n")
                     @Override
                     public void onResponse(Call<String> call, Response<String> response) {
                         final Toast toast = Toast.makeText(activity, "서버와의 통신에 성공했습니다.", Toast.LENGTH_LONG);
@@ -89,6 +107,7 @@ public class ThreeFragment extends Fragment {
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
+                        List<Map> ListMapL = new ArrayList<>();
                         for (int i = 0; i < jsonArray.length(); i++) {
                             Map<String, String> map = new HashMap<>();
                             Gson gson = new Gson();
@@ -104,6 +123,16 @@ public class ThreeFragment extends Fragment {
                         }
                         Log.d("discomfort data", ListMapL.toString());
                         ((MainActivity) Objects.requireNonNull(getActivity())).ListMap = ListMapL;
+                        int j, maxIndex = 0;
+                        for (int i = 0; i < ListMapL.size() - 1; ) {
+                            String data = ListMapL.get(i).get("DataTime").toString().substring(0, 11);
+                            for (j = i; j < ListMapL.size() && data.equals(ListMapL.get(j).get("DataTime").toString().substring(0, 11)); j++) {
+                            }
+                            maxIndex++;
+                            Log.d("index", maxIndex + " : " + data);
+                            i = j;
+                        }
+                        dataInfo.setText("서버로부터 " + maxIndex + "일 간의 총 " + ListMapL.size() + "개의 데이터를 불러왔습니다.");
                     }
 
                     public void onFailure(Call<String> call, Throwable t) {
@@ -227,6 +256,7 @@ public class ThreeFragment extends Fragment {
                                     readBufferPosition = 0;
                                     final String finalText = text;
                                     handler.post(new Runnable() {
+                                        @SuppressLint("SetTextI18n")
                                         @Override
                                         public void run() {
                                             Log.d("run data", finalText);
@@ -235,6 +265,7 @@ public class ThreeFragment extends Fragment {
                                             } catch (JSONException e) {
                                                 e.printStackTrace();
                                             }
+                                            List<Map> ListMapL = new ArrayList<>();
                                             for (int i = 0; i < jsonArray.length(); i++) {
                                                 Map<String, String> map = new HashMap<>();
                                                 Gson gson = new Gson();
@@ -250,6 +281,16 @@ public class ThreeFragment extends Fragment {
                                             }
                                             Log.d("discomfort data", ListMapL.toString());
                                             ((MainActivity) Objects.requireNonNull(getActivity())).ListMap = ListMapL;
+                                            int j, maxIndex = 0;
+                                            for (int i = 0; i < ListMapL.size() - 1; ) {
+                                                String data = ListMapL.get(i).get("DataTime").toString().substring(0, 11);
+                                                for (j = i; j < ListMapL.size() && data.equals(ListMapL.get(j).get("DataTime").toString().substring(0, 11)); j++) {
+                                                }
+                                                maxIndex++;
+                                                Log.d("index", maxIndex + " : " + data);
+                                                i = j;
+                                            }
+                                            dataInfo.setText("블루투스 기기로부터 " + maxIndex + "일 간의 총 " + ListMapL.size() + "개의 데이터를 불러왔습니다.");
                                             MainActivity activity = (MainActivity) getActivity();
                                             Toast.makeText(activity, "데이터를 수신했습니다.", Toast.LENGTH_SHORT).show();
                                         }
