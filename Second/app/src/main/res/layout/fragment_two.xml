@@ -64,9 +64,39 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/chartFrame2"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/twoWeeks"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/contentPadding"
+                    android:text="현재"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="@dimen/bodyTextSize" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/chart2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/contentPadding"
+                    android:layout_marginEnd="@dimen/contentPadding"
+                    android:layout_marginBottom="@dimen/contentPadding"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/chartFrame1"
                 android:layout_width="match_parent"
                 android:layout_height="400dp"
+                android:layout_marginTop="@dimen/contentPadding"
                 android:background="@color/white"
                 android:orientation="vertical">
 
@@ -94,50 +124,20 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/chartFrame2"
-                android:layout_width="match_parent"
-                android:layout_height="400dp"
-                android:layout_marginTop="@dimen/contentPadding"
-                android:background="@color/white"
-                android:orientation="vertical"
-                android:visibility="gone">
-
-                <TextView
-                    android:id="@+id/twoWeeks"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/contentPadding"
-                    android:text="2주 전"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    android:textSize="@dimen/bodyTextSize" />
-
-                <com.github.mikephil.charting.charts.LineChart
-                    android:id="@+id/chart2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="@dimen/contentPadding"
-                    android:layout_marginEnd="@dimen/contentPadding"
-                    android:layout_marginBottom="@dimen/contentPadding"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal" />
-
-            </LinearLayout>
-
-            <LinearLayout
                 android:id="@+id/chartFrame3"
                 android:layout_width="match_parent"
                 android:layout_height="400dp"
                 android:layout_marginTop="@dimen/contentPadding"
                 android:background="@color/white"
                 android:orientation="vertical"
-                android:visibility="gone">
+                android:visibility="visible">
 
                 <TextView
                     android:id="@+id/oneWeek"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/contentPadding"
-                    android:text="1주 전"
+                    android:text="1달 전"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:textSize="@dimen/bodyTextSize" />
 
@@ -160,7 +160,7 @@
                 android:layout_marginTop="@dimen/contentPadding"
                 android:background="@color/white"
                 android:orientation="vertical"
-                android:visibility="gone">
+                android:visibility="visible">
 
                 <TextView
                     android:id="@+id/today"
@@ -182,6 +182,18 @@
                     android:orientation="horizontal" />
 
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/unitText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center"
+                android:paddingBottom="@dimen/contentPadding"
+                android:text="TextView"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="@dimen/bodyTextSize"
+                android:visibility="gone" />
         </LinearLayout>
     </ScrollView>
 

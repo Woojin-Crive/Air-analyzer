@@ -80,6 +80,9 @@ public class ThreeFragment extends Fragment {
             }
             dataInfo.setText("서버로부터 " + maxIndex + "일 간의 총 " + ListMapF.size() + "개의 데이터를 불러왔습니다.");
         }
+        else{
+            dataInfo.setText("데이터가 없습니다.");
+        }
         Button serverButton = view.findViewById(R.id.serverButton);
         final MainActivity activity = (MainActivity) getActivity();
         serverButton.setOnClickListener(new View.OnClickListener() {
