@@ -303,7 +303,7 @@ public class TwoFragment extends Fragment {
             }
             Collections.reverse(values);
             Log.d("done", values.toString());
-            chartLayout2.setVisibility(View.VISIBLE);
+            chartLayout3.setVisibility(View.VISIBLE);
         }
         return values;
     }
