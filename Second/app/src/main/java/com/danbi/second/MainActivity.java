@@ -1,6 +1,7 @@
 package com.danbi.second;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -33,16 +34,13 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     List<Map> ListMap = new ArrayList<>();
     String data = "";
     JSONArray jsonArray = new JSONArray();
-
+    String sfName = "myFile";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ImageView loadingImage = findViewById(R.id.loadingImage);
-        Intent intent = getIntent();
-        data = intent.getStringExtra("RawData");
-        Log.d("data", "not null");
-        Log.e("received from splash", data);
+        SharedPreferences sf = getSharedPreferences(sfName, 0);
+        data = sf.getString("name", ""); // 키값으로 꺼냄
         if (!data.equals("")) {
             try {
                 jsonArray = new JSONArray(data);
