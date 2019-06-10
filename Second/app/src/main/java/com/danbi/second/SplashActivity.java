@@ -18,6 +18,7 @@ public class SplashActivity extends AppCompatActivity {
 
     String sfName = "myFile";
     String finalDataInput;
+
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_screen);
@@ -63,7 +64,6 @@ public class SplashActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         toast.cancel();
-                        intent.putExtra("RawData", "");
                         new Handler().postDelayed(new Runnable() {
                             @Override
                             public void run() {
