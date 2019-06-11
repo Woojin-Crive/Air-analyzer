@@ -298,7 +298,7 @@ public class TwoFragment extends Fragment {
                     Log.d("Data amount", String.valueOf(i));
                     sumAll += sum;
                 }
-                values.add(new Entry(cnt - 1, sumAll));
+                values.add(new Entry(cnt - 1, sumAll/7));
                 Log.d("cnt", String.valueOf(cnt));
             }
             Collections.reverse(values);
