@@ -15,12 +15,14 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.formatter.IAxisValueFormatter;
 import com.github.mikephil.charting.formatter.IFillFormatter;
 import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.github.mikephil.charting.interfaces.dataprovider.LineDataProvider;
@@ -204,15 +206,14 @@ public class TwoFragment extends Fragment {
                 }
             });
         } else if (chartName == chart3) {
-            final String[] xAxisString = new String[9];
-//            chart.getXAxis().setLabelCount(7);
+            chartName.getXAxis().setLabelCount(3);
+            final String[] xAxisString = new String[4];
             for (int i = 0; i < 4; i++) {
                 xAxisString[i] = (4 - i) + "주 전";
             }
             xAxis.setValueFormatter(new ValueFormatter() {
                 @Override
                 public String getFormattedValue(float value) {
-                    // return the string va
                     return xAxisString[(int) value];
                 }
             });
@@ -298,7 +299,7 @@ public class TwoFragment extends Fragment {
                     Log.d("Data amount", String.valueOf(i));
                     sumAll += sum;
                 }
-                values.add(new Entry(cnt - 1, sumAll/7));
+                values.add(new Entry(cnt - 1, sumAll / 7));
                 Log.d("cnt", String.valueOf(cnt));
             }
             Collections.reverse(values);
