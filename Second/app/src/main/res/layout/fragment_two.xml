@@ -38,6 +38,11 @@
         <android.support.design.widget.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="메탄" />
+
+        <android.support.design.widget.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="@string/temperature" />
 
         <android.support.design.widget.TabItem

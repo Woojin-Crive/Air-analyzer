@@ -15,14 +15,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.LineChart;
-import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
-import com.github.mikephil.charting.formatter.IAxisValueFormatter;
 import com.github.mikephil.charting.formatter.IFillFormatter;
 import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.github.mikephil.charting.interfaces.dataprovider.LineDataProvider;
@@ -105,21 +103,26 @@ public class TwoFragment extends Fragment {
                         chartChanged();
                         break;
                     case 3:
-                        unitText.setText("단위 : ppv");
+                        unitText.setText("단위 : ppm");
                         dataSelector = "Co";
                         chartChanged();
                         break;
                     case 4:
+                        unitText.setText("단위 : ppm");
+                        dataSelector = "methanen";
+                        chartChanged();
+                        break;
+                    case 5:
                         unitText.setText("단위 : °C");
                         dataSelector = "Temp";
                         chartChanged();
                         break;
-                    case 5:
+                    case 6:
                         unitText.setText("단위 : %RH");
                         dataSelector = "Humid";
                         chartChanged();
                         break;
-                    case 6:
+                    case 7:
                         unitText.setText("단위 : 점");
                         dataSelector = "Discomfort";
                         chartChanged();

@@ -1,6 +1,5 @@
 package com.danbi.second;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -24,88 +23,45 @@ public class OneFragment extends Fragment {
     @Nullable
     List<Map> ListMap = new ArrayList<>();
 
-    @SuppressLint("SetTextI18n")
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_one, container, false);
         ListMap = ((MainActivity) Objects.requireNonNull(getActivity())).ListMap;
         if (ListMap.size() != 0) {
-            ImageView imageView1 = view.findViewById(R.id.imageViewGood);
-            ImageView imageView2 = view.findViewById(R.id.imageViewBotong);
-            ImageView imageView3 = view.findViewById(R.id.imageViewBad);
-            ImageView imageView4 = view.findViewById(R.id.imageViewVeryBad);
-            ImageView imageView5 = view.findViewById(R.id.imageViewGood1);
-            ImageView imageView6 = view.findViewById(R.id.imageViewBotong1);
-            ImageView imageView7 = view.findViewById(R.id.imageViewBad1);
-            ImageView imageView8 = view.findViewById(R.id.imageViewVeryBad1);
-            TextView misaValue = view.findViewById(R.id.misaValue);
-            TextView chomisaValue = view.findViewById(R.id.chomisaValue);
+            ImageView image1 = view.findViewById(R.id.image1);
+            ImageView image2 = view.findViewById(R.id.image2);
+            ImageView image3 = view.findViewById(R.id.image3);
+            ImageView image4 = view.findViewById(R.id.image4);
+            ImageView image5 = view.findViewById(R.id.image5);
+
+            image1.setVisibility(View.VISIBLE);
+            image2.setVisibility(View.VISIBLE);
+            image3.setVisibility(View.VISIBLE);
+            image4.setVisibility(View.VISIBLE);
+            image5.setVisibility(View.VISIBLE);
+
+            changeImage(image1, getGrade("pm10"));
+            changeImage(image2, getGrade("pm1_0"));
+            changeImage(image3, getGrade("gas"));
+            changeImage(image4, getGrade("Co"));
+            changeImage(image5, getGrade("methanen"));
+
+            TextView value1 = view.findViewById(R.id.value1);
+            TextView value2 = view.findViewById(R.id.value2);
+            TextView value3 = view.findViewById(R.id.value3);
+            TextView value4 = view.findViewById(R.id.value4);
+            TextView value5 = view.findViewById(R.id.value5);
+
+            value1.setText(getValue("pm10", "μg/m³"));
+            value2.setText(getValue("pm1_0", "μg/m³"));
+            value3.setText(getValue("gas", "ppm"));
+            value4.setText(getValue("Co", "ppm"));
+            value5.setText(getValue("methanen", "ppm"));
+
             TextView airValue = view.findViewById(R.id.airValue);
-            imageView1.setVisibility(View.INVISIBLE);
-            imageView2.setVisibility(View.INVISIBLE);
-            imageView3.setVisibility(View.INVISIBLE);
-            imageView4.setVisibility(View.INVISIBLE);
-            imageView5.setVisibility(View.INVISIBLE);
-            imageView6.setVisibility(View.INVISIBLE);
-            imageView7.setVisibility(View.INVISIBLE);
-            imageView8.setVisibility(View.INVISIBLE);
-            misaValue.setText(String.format("%su/gm3", ListMap.get(ListMap.size() - 1).get("pm10").toString()));
-            chomisaValue.setText(String.format("%su/gm3", ListMap.get(ListMap.size() - 1).get("pm1_0").toString()));
-            int pm10 = (int) Float.parseFloat(ListMap.get(ListMap.size() - 1).get("pm10").toString());//misa
-            int pm1_0 = (int) Float.parseFloat(ListMap.get(ListMap.size() - 1).get("pm1_0").toString());//chomisa
-            int menthanen = (int) Float.parseFloat(ListMap.get(ListMap.size() - 1).get("methanen").toString());
-            int Co = (int) Float.parseFloat(ListMap.get(ListMap.size() - 1).get("Co").toString());
-            int gas = (int) Float.parseFloat(ListMap.get(ListMap.size() - 1).get("gas").toString());
-            int airvalue = 0;
-            airvalue = (scoreEval("misa", pm10) + scoreEval("chomisa", pm1_0) + scoreEval("menthanen", menthanen) + scoreEval("Co", Co) + scoreEval("gas", gas)) / 5;
+            int airvalue = (getGrade("pm10") + getGrade("pm1_0") + getGrade("methanen") + getGrade("Co") + getGrade("gas")) * 5;
             airValue.setText(Integer.toString(airvalue));
-            int pm10Case = 0;
-            int pm1_0Case = 0;
-            float pm10Data = Float.parseFloat(ListMap.get(ListMap.size() - 1).get("pm10").toString());
 
-            if (pm10Data >= 0 && pm10Data <= 30)
-                pm10Case = 1;
-            else if (pm10Data >= 31 && pm10Data <= 80)
-                pm10Case = 2;
-            else if (pm10Data >= 81 && pm10Data <= 150)
-                pm10Case = 3;
-            else if (pm10Data >= 151)
-                pm10Case = 4;
-
-            float pm1_0Data = Float.parseFloat(ListMap.get(ListMap.size() - 1).get("pm1_0").toString());
-            if (pm1_0Data >= 0 && pm1_0Data <= 15)
-                pm1_0Case = 1;
-            else if (pm1_0Data >= 16 && pm1_0Data <= 35)
-                pm1_0Case = 2;
-            else if (pm1_0Data >= 36 && pm1_0Data <= 75)
-                pm1_0Case = 3;
-            else if (pm1_0Data >= 76)
-                pm1_0Case = 4;
-
-            if (pm10Case == 1)
-                imageView1.setVisibility(View.VISIBLE);
-
-            else if (pm10Case == 2)
-                imageView2.setVisibility(View.VISIBLE);
-
-            else if (pm10Case == 3)
-                imageView3.setVisibility(View.VISIBLE);
-
-            else if (pm10Case == 4)
-                imageView4.setVisibility(View.VISIBLE);
-
-            if (pm1_0Case == 1)
-                imageView5.setVisibility(View.VISIBLE);
-
-            else if (pm1_0Case == 2)
-                imageView6.setVisibility(View.VISIBLE);
-
-            else if (pm1_0Case == 3)
-                imageView7.setVisibility(View.VISIBLE);
-
-            else if (pm1_0Case == 4)
-                imageView8.setVisibility(View.VISIBLE);
-
-            ImageButton imageButton = view.findViewById(R.id.imageButton);
+            ImageButton imageButton = view.findViewById(R.id.imageButton);//기상청 버튼
             imageButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -114,70 +70,58 @@ public class OneFragment extends Fragment {
                     startActivity(intent);
                 }
             });
-            TextView textView2 = view.findViewById(R.id.textView2);
+
+            TextView textView2 = view.findViewById(R.id.textView2);//현재 시간
             textView2.setText(DateFormat.format("HH:mm", System.currentTimeMillis()));
         }
         return view;
     }
 
-    public int scoreEval(String type, int data) {
+    public String getValue(String dataSelector, String unit) {
+        return ListMap.get(ListMap.size() - 1).get(dataSelector).toString() + unit;
+    }
 
-        if (type.equals("chomisa")) {
-            if (0 <= data && data <= 15) {
-                return 100;
-            } else if (16 <= data && data <= 35) {
-                return 75;
-            } else if (36 <= data && data <= 75) {
-                return 50;
-            } else {
-                return 25;
-            }
-
-        } else if (type.equals("misa")) {
-            if (0 <= data && data <= 30) {
-                return 100;
-            } else if (31 <= data && data <= 80) {
-                return 75;
-            } else if (81 <= data && data <= 150) {
-                return 50;
-            } else {
-                return 25;
-            }
-
-        } else if (type.equals("methanen")) {
-            if (100 <= data && data <= 200) {
-                return 100;
-            } else if (201 <= data && data <= 300) {
-                return 75;
-            } else if (301 <= data && data <= 400) {
-                return 50;
-            } else {
-                return 25;
-            }
-
-        } else if (type.equals("Co")) {
-            if (0 <= data && data <= 2) {
-                return 100;
-            } else if (3 <= data && data <= 9) {
-                return 75;
-            } else if (10 <= data && data <= 15) {
-                return 50;
-            } else {
-                return 25;
-            }
-
-        } else if (type.equals("gas")) {
-            if (100 <= data && data <= 200) {
-                return 100;
-            } else if (201 <= data && data <= 300) {
-                return 75;
-            } else if (301 <= data && data <= 400) {
-                return 50;
-            } else {
-                return 25;
-            }
-
+    public int getGrade(String dataSelector) {
+        float[] threshold;
+        threshold = new float[0];
+        float data = Float.parseFloat(ListMap.get(ListMap.size() - 1).get(dataSelector).toString());
+        switch (dataSelector) {
+            case "pm10":
+                threshold = new float[]{0, 30, 80, 150};
+                break;
+            case "pm1_0":
+                threshold = new float[]{0, 15, 35, 75};
+                break;
+            case "methanen":
+                threshold = new float[]{100, 200, 300, 400};
+                break;
+            case "Co":
+                threshold = new float[]{0, 2, 9, 15};
+                break;
+            case "gas":
+                threshold = new float[]{100, 200, 300, 400};
+                break;
         }
+
+        if (threshold[0] <= data && data <= threshold[1])
+            return 4;
+        else if (threshold[1] < data && data <= threshold[2])
+            return 3;
+        else if (threshold[2] < data && data <= threshold[3])
+            return 2;
+        else if (threshold[3] < data)
+            return 1;
         return 0;
+    }
+
+    public void changeImage(ImageView imageView, int grade) {
+        if (grade == 4)
+            imageView.setImageResource(R.drawable.good);
+        else if (grade == 3)
+            imageView.setImageResource(R.drawable.botong);
+        else if (grade == 2)
+            imageView.setImageResource(R.drawable.bad);
+        else if (grade == 1)
+            imageView.setImageResource(R.drawable.verybad);
     }
 }
