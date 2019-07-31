@@ -15,7 +15,7 @@ public class NetRetrofit {
     }
 
     Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl("http://13.114.94.147:8080/")
+            .baseUrl("https://api.github.com/users/izen1231/")
             //.addConverterFactory(GsonConverterFactory.create()) // 파싱등록
             .addConverterFactory(ScalarsConverterFactory.create())
             .build();

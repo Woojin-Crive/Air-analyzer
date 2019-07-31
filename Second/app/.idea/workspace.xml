@@ -14,8 +14,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c94a77f6-edf4-4c6b-b6a2-546b73de42e2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_one.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_one.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danbi/second/NetRetrofit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danbi/second/NetRetrofit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danbi/second/RetrofitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danbi/second/RetrofitService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/danbi/second/SplashActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/danbi/second/SplashActivity.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,78 +41,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/danbi/second/TwoFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="996">
-              <caret line="147" column="43" selection-start-line="147" selection-start-column="43" selection-end-line="147" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/danbi/second/OneFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="33" column="62" selection-start-line="33" selection-start-column="62" selection-end-line="33" selection-end-column="62" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_one.xml">
           <provider editor-type-id="text-editor">
-            <state relative-caret-position="176">
+            <state relative-caret-position="5340">
               <caret line="356" column="55" selection-start-line="356" selection-start-column="55" selection-end-line="356" selection-end-column="55" />
-              <folding>
-                <element signature="e#6142#6165#0" expanded="true" />
-                <element signature="e#6207#6227#0" expanded="true" />
-                <element signature="e#6655#6678#0" expanded="true" />
-                <element signature="e#6757#6772#0" expanded="true" />
-                <element signature="e#6893#6914#0" expanded="true" />
-                <element signature="e#7228#7251#0" expanded="true" />
-                <element signature="e#7294#7318#0" expanded="true" />
-                <element signature="e#7758#7781#0" expanded="true" />
-                <element signature="e#7902#7923#0" expanded="true" />
-                <element signature="e#8172#8192#0" expanded="true" />
-                <element signature="e#8234#8254#0" expanded="true" />
-                <element signature="e#8682#8705#0" expanded="true" />
-                <element signature="e#8784#8802#0" expanded="true" />
-                <element signature="e#8923#8944#0" expanded="true" />
-                <element signature="e#9254#9277#0" expanded="true" />
-                <element signature="e#9320#9344#0" expanded="true" />
-                <element signature="e#9784#9807#0" expanded="true" />
-                <element signature="e#9928#9949#0" expanded="true" />
-                <element signature="e#10198#10218#0" expanded="true" />
-                <element signature="e#10260#10280#0" expanded="true" />
-                <element signature="e#10708#10731#0" expanded="true" />
-                <element signature="e#10935#10956#0" expanded="true" />
-                <element signature="e#11266#11289#0" expanded="true" />
-                <element signature="e#11332#11356#0" expanded="true" />
-                <element signature="e#11796#11819#0" expanded="true" />
-                <element signature="e#11940#11961#0" expanded="true" />
-                <element signature="e#12210#12230#0" expanded="true" />
-                <element signature="e#12272#12292#0" expanded="true" />
-                <element signature="e#12720#12743#0" expanded="true" />
-                <element signature="e#12950#12971#0" expanded="true" />
-                <element signature="e#13281#13304#0" expanded="true" />
-                <element signature="e#13347#13371#0" expanded="true" />
-                <element signature="e#13811#13834#0" expanded="true" />
-                <element signature="e#13955#13976#0" expanded="true" />
-                <element signature="e#14224#14244#0" expanded="true" />
-                <element signature="e#14286#14306#0" expanded="true" />
-                <element signature="e#14734#14757#0" expanded="true" />
-                <element signature="e#14964#14985#0" expanded="true" />
-                <element signature="e#15295#15318#0" expanded="true" />
-                <element signature="e#15361#15385#0" expanded="true" />
-                <element signature="e#15825#15848#0" expanded="true" />
-                <element signature="e#15969#15990#0" expanded="true" />
-              </folding>
             </state>
           </provider>
           <provider selected="true" editor-type-id="android-designer2" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/danbi/second/OneFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="888">
+              <caret line="83" column="46" lean-forward="true" selection-start-line="83" selection-start-column="46" selection-end-line="83" selection-end-column="46" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -117,27 +64,47 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="375">
               <caret line="25" column="43" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
+              <folding>
+                <element signature="e#1066#1081#0" expanded="true" />
+              </folding>
             </state>
           </provider>
           <provider editor-type-id="android-designer2" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/res/values/dimens.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/danbi/second/SplashActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="404">
+              <caret line="50" column="47" selection-start-line="50" selection-start-column="47" selection-end-line="50" selection-end-column="47" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#55802#56057#0" expanded="true" />
+                <element signature="e#56056#56057#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/danbi/second/SplashActivity.java">
+        <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="975">
-              <caret line="65" column="39" selection-start-line="65" selection-start-column="39" selection-end-line="65" selection-end-column="39" />
+            <state relative-caret-position="75">
+              <caret line="5" column="66" selection-start-line="5" selection-start-column="66" selection-end-line="5" selection-end-column="66" />
+            </state>
+          </provider>
+          <provider editor-type-id="android-manifest" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/danbi/second/NetRetrofit.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="17" column="60" selection-start-line="17" selection-start-column="60" selection-end-line="17" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#305#306#0" expanded="true" />
+                <element signature="e#339#340#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -160,8 +127,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+            <state relative-caret-position="270">
+              <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -248,8 +215,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/danbi/second/FourFragment.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/danbi/second/ArrayUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/danbi/second/Wrapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/danbi/second/NetRetrofit.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/danbi/second/RetrofitService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/danbi/second/DataClass.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/danbi/second/splashActivity.java" />
         <option value="$PROJECT_DIR$/src/main/res/drawable/splash_background.xml" />
@@ -268,12 +233,14 @@
         <option value="$PROJECT_DIR$/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/src/main/res/layout/splash_screen.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/danbi/second/MainActivity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/danbi/second/SplashActivity.java" />
         <option value="$PROJECT_DIR$/src/main/res/layout/fragment_two.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/danbi/second/TwoFragment.java" />
         <option value="$PROJECT_DIR$/src/main/res/values/dimens.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/danbi/second/OneFragment.java" />
         <option value="$PROJECT_DIR$/src/main/res/layout/fragment_one.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/danbi/second/NetRetrofit.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/danbi/second/RetrofitService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/danbi/second/SplashActivity.java" />
       </list>
     </option>
   </component>
@@ -290,9 +257,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -313,35 +279,13 @@
             </path>
             <path>
               <item name="Second" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-            </path>
-            <path>
-              <item name="Second" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
-            </path>
-            <path>
-              <item name="Second" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="menu" type="ddeffd01:AndroidResFolderTypeNode" />
-            </path>
-            <path>
-              <item name="Second" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
-            </path>
-            <path>
-              <item name="Second" type="1abcf292:AndroidViewProjectNode" />
               <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -484,14 +428,14 @@
       <window_info id="Resources Explorer" order="7" weight="0.32967034" />
       <window_info id="Capture Tool" order="8" />
       <window_info anchor="bottom" id="Run" order="0" weight="0.32959184" />
-      <window_info anchor="bottom" id="Logcat" order="1" sideWeight="0.4993895" visible="true" weight="0.39693877" />
+      <window_info anchor="bottom" id="Logcat" order="1" sideWeight="0.4993895" weight="0.39693877" />
       <window_info anchor="bottom" id="TODO" order="2" weight="0.32959184" />
-      <window_info anchor="bottom" id="Debug" order="3" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.32959184" />
       <window_info anchor="bottom" id="Terminal" order="4" />
       <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.501221" side_tool="true" weight="0.2645382" />
       <window_info anchor="bottom" id="Version Control" order="6" weight="0.32959184" />
-      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.498779" weight="0.2642857" />
-      <window_info anchor="bottom" id="Android Profiler" order="8" />
+      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.498779" visible="true" weight="0.2642857" />
+      <window_info anchor="bottom" id="Android Profiler" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Find" order="9" weight="0.32959184" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
@@ -499,6 +443,7 @@
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info anchor="right" id="Preview" order="4" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
+      <window_info anchor="right" id="Assistant" order="6" visible="true" weight="0.32967034" />
     </layout>
     <layout-to-restore>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
@@ -532,6 +477,24 @@
     <MESSAGE value="workspace setting" />
     <option name="LAST_COMMIT_MESSAGE" value="workspace setting" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/danbi/second/SplashActivity.java</url>
+          <line>76</line>
+          <properties />
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/danbi/second/SplashActivity.java</url>
+          <line>77</line>
+          <properties />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/res/drawable-v24/ic_launcher_foreground.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -557,13 +520,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/danbi/second/RetrofitService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/drawable/verybad.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -578,16 +534,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/danbi/second/NetRetrofit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -707,14 +653,6 @@
       </provider>
       <provider selected="true" editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="59" selection-start-line="15" selection-start-column="59" selection-end-line="15" selection-end-column="59" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-manifest" />
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.PhilJay/MPAndroidChart/v3.1.0/c36541a24c138357e038090ca9f92a7870656913/MPAndroidChart-v3.1.0-sources.jar!/com/github/mikephil/charting/formatter/IAxisValueFormatter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -747,22 +685,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/danbi/second/MyXAxisValueFormatter.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/danbi/second/MyXAxisValueFormatter.java" />
+    <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-28/android/view/View.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="15">
+          <caret line="26090" column="13" selection-start-line="26090" selection-start-column="13" selection-end-line="26090" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/danbi/second/Wrapper.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/danbi/second/TwoFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1755">
+          <caret line="147" column="43" selection-start-line="147" selection-start-column="43" selection-end-line="147" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/danbi/second/SplashActivity.java">
+    <entry file="file://$PROJECT_DIR$/src/main/res/values/dimens.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="975">
-          <caret line="65" column="39" selection-start-line="65" selection-start-column="39" selection-end-line="65" selection-end-column="39" />
+        <state relative-caret-position="165">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-28/android/os/MessageQueue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="84" column="65" lean-forward="true" selection-start-line="84" selection-start-column="65" selection-end-line="84" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/danbi/second/RetrofitService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="66" selection-start-line="5" selection-start-column="66" selection-end-line="5" selection-end-column="66" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/danbi/second/NetRetrofit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="17" column="60" selection-start-line="17" selection-start-column="60" selection-end-line="17" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#305#306#0" expanded="true" />
+            <element signature="e#339#340#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -779,8 +760,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+        <state relative-caret-position="270">
+          <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -792,37 +773,15 @@
       </provider>
       <provider selected="true" editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-28/android/view/View.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/danbi/second/SplashActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="26090" column="13" selection-start-line="26090" selection-start-column="13" selection-end-line="26090" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/danbi/second/Wrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="e#0#73#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/danbi/second/TwoFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="996">
-          <caret line="147" column="43" selection-start-line="147" selection-start-column="43" selection-end-line="147" selection-end-column="43" />
+        <state relative-caret-position="404">
+          <caret line="50" column="47" selection-start-line="50" selection-start-column="47" selection-end-line="50" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#55802#56057#0" expanded="true" />
+            <element signature="e#56056#56057#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/values/dimens.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
@@ -830,68 +789,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="25" column="43" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
+          <folding>
+            <element signature="e#1066#1081#0" expanded="true" />
+          </folding>
         </state>
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/danbi/second/OneFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="33" column="62" selection-start-line="33" selection-start-column="62" selection-end-line="33" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_one.xml">
       <provider editor-type-id="text-editor">
-        <state relative-caret-position="176">
+        <state relative-caret-position="5340">
           <caret line="356" column="55" selection-start-line="356" selection-start-column="55" selection-end-line="356" selection-end-column="55" />
-          <folding>
-            <element signature="e#6142#6165#0" expanded="true" />
-            <element signature="e#6207#6227#0" expanded="true" />
-            <element signature="e#6655#6678#0" expanded="true" />
-            <element signature="e#6757#6772#0" expanded="true" />
-            <element signature="e#6893#6914#0" expanded="true" />
-            <element signature="e#7228#7251#0" expanded="true" />
-            <element signature="e#7294#7318#0" expanded="true" />
-            <element signature="e#7758#7781#0" expanded="true" />
-            <element signature="e#7902#7923#0" expanded="true" />
-            <element signature="e#8172#8192#0" expanded="true" />
-            <element signature="e#8234#8254#0" expanded="true" />
-            <element signature="e#8682#8705#0" expanded="true" />
-            <element signature="e#8784#8802#0" expanded="true" />
-            <element signature="e#8923#8944#0" expanded="true" />
-            <element signature="e#9254#9277#0" expanded="true" />
-            <element signature="e#9320#9344#0" expanded="true" />
-            <element signature="e#9784#9807#0" expanded="true" />
-            <element signature="e#9928#9949#0" expanded="true" />
-            <element signature="e#10198#10218#0" expanded="true" />
-            <element signature="e#10260#10280#0" expanded="true" />
-            <element signature="e#10708#10731#0" expanded="true" />
-            <element signature="e#10935#10956#0" expanded="true" />
-            <element signature="e#11266#11289#0" expanded="true" />
-            <element signature="e#11332#11356#0" expanded="true" />
-            <element signature="e#11796#11819#0" expanded="true" />
-            <element signature="e#11940#11961#0" expanded="true" />
-            <element signature="e#12210#12230#0" expanded="true" />
-            <element signature="e#12272#12292#0" expanded="true" />
-            <element signature="e#12720#12743#0" expanded="true" />
-            <element signature="e#12950#12971#0" expanded="true" />
-            <element signature="e#13281#13304#0" expanded="true" />
-            <element signature="e#13347#13371#0" expanded="true" />
-            <element signature="e#13811#13834#0" expanded="true" />
-            <element signature="e#13955#13976#0" expanded="true" />
-            <element signature="e#14224#14244#0" expanded="true" />
-            <element signature="e#14286#14306#0" expanded="true" />
-            <element signature="e#14734#14757#0" expanded="true" />
-            <element signature="e#14964#14985#0" expanded="true" />
-            <element signature="e#15295#15318#0" expanded="true" />
-            <element signature="e#15361#15385#0" expanded="true" />
-            <element signature="e#15825#15848#0" expanded="true" />
-            <element signature="e#15969#15990#0" expanded="true" />
-          </folding>
         </state>
       </provider>
       <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/danbi/second/OneFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="888">
+          <caret line="83" column="46" lean-forward="true" selection-start-line="83" selection-start-column="46" selection-end-line="83" selection-end-column="46" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

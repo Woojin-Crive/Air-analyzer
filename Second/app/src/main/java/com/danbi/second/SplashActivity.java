@@ -23,7 +23,7 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_screen);
         final Intent intent = new Intent(this, MainActivity.class);
-        Call<String> res = NetRetrofit.getInstance().getService().getJson();
+        Call<String> res = NetRetrofit.getInstance().getService().getJson();z
         res.enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
